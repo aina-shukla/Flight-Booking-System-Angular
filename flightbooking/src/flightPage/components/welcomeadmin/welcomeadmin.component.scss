@@ -1,0 +1,42 @@
+p{
+    position: center;
+    top: 10px;
+    left: 8px;
+    font-size: em;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: black;
+    padding-left: 50px;
+    padding: 10px;
+}
+
+#button {
+    line-height: 12px;
+    width: 100px;
+    font-size:  1em;
+    font-family: tahoma;
+    margin-top: 100px;
+    margin-right: 50px;
+    position:absolute;
+    top:0;
+    right:0;
+    size: 200px;
+}
+
+tr{
+    position: center;
+    top: 10px;
+    left: 8px;
+    font-size: 1em;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: black;
+    padding-left: 100px;
+    padding: 20px;
+    border-color: black;
+    width: 10px;
+
+}
+
+table, th, td {
+    border:1px solid black;
+    padding-block-end: 5px;
+  }

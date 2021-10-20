@@ -1,0 +1,30 @@
+
+    <p class="h4 mb-4" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Enter details to register</p>
+
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" >
+
+
+
+
+
+
+  Username:       <input type="text" formControlName="userName" placeholder="Enter username" /><br/> 
+
+    
+    Password:       <input type="password" formControlName="password" placeholder="Enter password" /><br/>
+
+    Email:          <input type="text" formControlName="email" placeholder="Enter E-mail" /><br/>
+  
+    Age:            <input type="number" formControlName="age" placeholder="Enter age" /><br/>
+    Contact number: <input type="number" formControlName="contactNumber" placeholder="Enter contactNumber" /><br/>
+    
+    Full Name:      <input type="text" formControlName="fullname" placeholder="Enter fullname" /><br/>
+    Date of Birth:  <input type="date" formControlName="dateOfBirth" placeholder="Enter Date of birth" /><br/>
+
+  
+
+  <br>
+    <button class="btn btn-info my-4 btn-block" [disabled]="userForm.invalid" type="submit" >Register</button>
+  
+  </form>

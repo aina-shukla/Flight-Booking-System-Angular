@@ -1,0 +1,30 @@
+
+<form [formGroup]="adminForm" (ngSubmit)="onSubmit()" >
+
+    <p class="h4 mb-4" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Enter airlines details to register new airline</p>
+    Flight Id: <input type="text" formControlName="flighId" placeholder="Enter flighId" /><br/>
+    
+    Airline Name: <input type="text" formControlName="airlineName" placeholder="Enter airlineName" /><br/>
+
+    Source: <input type="text" formControlName="fromPlace" placeholder="Enter source" /><br/>
+  
+    Destination : <input type="text" formControlName="toPlace" placeholder="Enter destination" /><br/>
+    Start Date : <input type="date" formControlName="startDateTime" placeholder="Enter startDateTime" /><br/>
+    
+    End Date: <input type="date" formControlName="endDateTime" placeholder="Enter endDateTime" /><br/>
+    Scheduled Days: <input type="text" formControlName="scheduledDays" placeholder="Enter scheduledDays" /><br/>
+   
+    Instrument used: <input type="text" formControlName="instrumentUsed" placeholder="Enter instrumentUsed" /><br/>
+    
+    Business Class Seats: <input type="number" formControlName="businessClassSeats" placeholder="Enter businessClassSeats" /><br/>
+
+    Non Business Class seats: <input type="number" formControlName="nonBusinessClassSeats" placeholder="Enter nonBusinessClassSeats" /><br/>
+  
+    Ticket Cost : <input type="number" formControlName="ticketCost" placeholder="Enter ticketCost" /><br/>
+    Number of rows : <input type="number" formControlName="numberOfRows" placeholder="Enter numberOfRows" /><br/>
+    
+    Meal: <input type="text" formControlName="meal" placeholder="Enter meal" /><br/>
+    Block Status: <input type="text" formControlName="blockStatus" placeholder="Enter blockStatus" /><br/>
+  <br>
+    <button class="btn btn-info my-4 btn-block" type="submit" [disabled]="adminForm.invalid">Register</button>  
+  </form>

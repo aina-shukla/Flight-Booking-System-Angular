@@ -1,0 +1,14 @@
+<p >Enter credentials</p>
+
+
+  <form [formGroup]="userForm" (submit)="onSubmit()">
+
+    Username: <input type="text" formControlName="userName" placeholder="Enter username" /><br/>
+    
+    Password: <input type="password" formControlName="password" placeholder="Enter password" /><br/>
+<br>
+    <!-- <button type="submit">Login</button> -->
+    <button type="submit" [disabled]="userForm.invalid">Login</button>
+</form>
+
+<br>

@@ -1,0 +1,90 @@
+<p>Welcome</p>
+
+<p>Booking History <br><br><button type="button" (click)="viewHistory()">Click to View History</button>
+
+<table>
+
+  <tr *ngIf="bookings.length>0">
+    <th>PNR</th>
+    <th>User ID</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Seat Number</th>
+    <th>Meal Required</th>
+    <th>Contact Number</th>
+    <th>Flight Number</th>
+    <th>Airline Name</th>
+    <th>Source</th>
+    <th>Destination</th>
+    <th>Start Date and Time</th>
+    <th>End Date and Time</th>
+    <th>Number of Seats</th>
+    <th>Booking Status</th>
+    <th>Update Booking Status</th>
+  </tr>
+
+  <tr *ngFor="let bookingInfoEntity of bookings">
+    <td>{{bookingInfoEntity.pNR}}</td>
+    <td>{{bookingInfoEntity.userId}}</td>
+    <td>{{bookingInfoEntity.name}}</td>
+    <td>{{bookingInfoEntity.gender}}</td>
+    <td>{{bookingInfoEntity.age}}</td>
+    <td>{{bookingInfoEntity.seatNumber}}</td>
+    <td>{{bookingInfoEntity.mealReq}}</td>
+    <td>{{bookingInfoEntity.contactNumber}}</td>
+    <td>{{bookingInfoEntity.flightNumber}}</td>
+    <td>{{bookingInfoEntity.airlineName}}</td>
+    <td>{{bookingInfoEntity.fromPlace}}</td>
+    <td>{{bookingInfoEntity.toPlace}}</td>
+    <td>{{bookingInfoEntity.startDateTime}}</td>
+    <td>{{bookingInfoEntity.endDateTime}}</td>
+    <td>{{bookingInfoEntity.numberOfSeats}}</td>
+    <td>{{bookingInfoEntity.bookingStatus}}</td>
+    <td><button (click)="cancelYourTicket(bookingInfoEntity.pNR)"
+        *ngIf="bookingInfoEntity.bookingStatus=='BOOKED'">Cancel Ticket</button></td>
+
+  </tr>
+
+</table>
+
+<!--
+<hr>
+<p>Current Bookings <br><br><button type="button">Click to View Bookings</button></p>  -->
+<hr>
+<p>Your Details <br><br><button type="button" (click)="viewDetail()">Click to View Details</button>
+
+  <!--  <p>To view user details -> <button type="button" (click)="viewDetail(userEntity.userName)">Click to View Details</button> -->
+
+
+<table>
+
+  <tr *ngIf="users.length>0">
+    <th>User Name</th>
+    <th>Email Id</th>
+    <th>Full Name</th>
+    <th>Age</th>
+    <th>Contact Number</th>
+    <th>Date of Birth</th>
+
+  </tr>
+
+  <tr *ngFor="let userEntity of users">
+    <td>{{userEntity.userName}}</td>
+    <td>{{userEntity.emailId}}</td>
+    <td>{{userEntity.fullName}}</td>
+    <td>{{userEntity.age}}</td>
+    <td>{{userEntity.contactNumber}}</td>
+    <td>{{userEntity.dateOfBirth}}</td>
+
+  </tr>
+</table>
+
+<br>
+
+
+<div id="wrapper">
+  <div id="container">
+    <div><input id="button" type="button" (click)=logout() value="LOGOUT"></div>
+  </div>
+</div>

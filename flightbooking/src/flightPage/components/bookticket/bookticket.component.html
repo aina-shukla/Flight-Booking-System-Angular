@@ -1,0 +1,34 @@
+
+<p class="error" *ngIf="message.length>0">{{message}}</p>
+
+<div *ngIf="message.length==0">
+
+<p> Search your flights below</p>
+<!--
+<form class="searchFlights" action="action_page.php">
+  <input type="radio" placeholder="Enter Start Location...." name="search" value ="One Way"><label for="search">One Way</label> 
+  <input type="radio" placeholder="Enter Start Location...." name="search" value ="One Way"><label for="search">Two Way</label> <br>
+
+    <input type="text" placeholder="Enter Start Location...." name="search"> <br>
+    <input type="text" placeholder="Enter Destination..." name="search"> <br>
+    <input type="date" placeholder="Enter Preferred Date" name="search"> <br><br>
+    <button type="submit"><i class="fa fa-search"></i> Search</button>
+  </form>  -->
+
+  <form [formGroup]="searchFlightsForm" (submit)="onSubmit()">
+<!--
+    <input type="radio" placeholder="Enter Start Location...." name="search" value ="One Way"><label for="search">One Way</label> 
+    <input type="radio" placeholder="Enter Start Location...." name="search" value ="One Way"><label for="search">Two Way</label> <br><br/>
+-->
+    Source: <input type="text" formControlName="fromPlace" placeholder="Enter Start Location...." /><br/><br/>
+    
+    Destination: <input type="text" formControlName="toPlace" placeholder="Enter Destination..." /><br/><br/>
+
+    Date of Journey: <input type="date" formControlName="startDateTime" placeholder="Enter Date..." /><br/>
+
+<br>
+    <!-- <button type="submit">Login</button> -->
+    <button type="submit" [disabled]="searchFlightsForm.invalid">Search</button>
+</form>
+
+</div>

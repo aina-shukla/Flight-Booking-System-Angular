@@ -1,0 +1,101 @@
+<p>Welcome Admin</p>
+<!--
+<form [formGroup]="updateForm" (submit)="updateAirlinesFromDB()">
+  Update Airline :  <input type="number" formControlName="flightNumber" placeholder="Enter Flight Number" /><br/>
+</form> 
+<hr>
+-->
+<p>View and Block Airlines <br><br><button type="button" (click)="findAirlines()">Click to View All Airlines</button></p> <hr>
+
+<table>
+
+  <tr *ngIf="airlines.length>0">
+    <th>Flight Number</th>
+    <th>Flight ID</th>
+    <th>Airline Name</th>
+    <th>Source</th>
+    <th>Destination</th>
+    <th>Start Date/Time </th>
+    <th>End Date/Time </th>
+    <th>Scheduled Days</th>
+    <th>Instrument Used</th>
+    <th>Business Class Seats</th>
+    <th>Non Business Class Seats</th> 
+    <th>Ticket Cost</th>
+    <th>Number of Rows</th>
+    <th>Meal</th>
+    <th>Block Status</th>
+    <th>Update Block Status</th>
+  </tr>
+
+  <tr *ngFor="let airlinesEntity of airlines">
+    <td>{{airlinesEntity.flightNumber}}</td>
+    <td>{{airlinesEntity.flighId}}</td>
+    <td>{{airlinesEntity.airlineName}}</td>
+    <td>{{airlinesEntity.fromPlace}}</td>
+    <td>{{airlinesEntity.toPlace}}</td>
+    <td>{{airlinesEntity.startDateTime}}</td>
+    <td>{{airlinesEntity.endDateTime}}</td>
+    <td>{{airlinesEntity.scheduledDays}}</td>
+    <td>{{airlinesEntity.instrumentUsed}}</td>
+    <td>{{airlinesEntity.businessClassSeats}}</td>
+    <td>{{airlinesEntity.nonBusinessClassSeats}}</td> 
+    <td>{{airlinesEntity.ticketCost}}</td>
+    <td>{{airlinesEntity.numberOfRows}}</td>
+    <td>{{airlinesEntity.meal}}</td>
+    <td>{{airlinesEntity.blockStatus}}</td>
+    <td><button (click)="findAirlinesFromDB(airlinesEntity.flightNumber)"
+        *ngIf="airlinesEntity.blockStatus=='UNBLOCKED'">Block Flight</button></td>
+  </tr>
+
+</table>
+
+<p>View Available Airlines <br><br><button type="button" (click)="findAvailableAirlines()">Click to View Available Airlines</button></p> <hr>
+
+<table>
+
+  <tr *ngIf="avlailableAirlines.length>0">
+    <th>Flight Number</th>
+    <th>Flight ID</th>
+    <th>Airline Name</th>
+    <th>Source</th>
+    <th>Destination</th>
+    <th>Start Date/Time </th>
+    <th>End Date/Time </th>
+    <th>Scheduled Days</th>
+    <th>Instrument Used</th>
+    <th>Business Class Seats</th>
+    <th>Non Business Class Seats</th> 
+    <th>Ticket Cost</th>
+    <th>Number of Rows</th>
+    <th>Meal</th>
+    <th>Block Status</th>
+  </tr>
+
+  <tr *ngFor="let airlinesEntity of avlailableAirlines">
+    <td>{{airlinesEntity.flightNumber}}</td>
+    <td>{{airlinesEntity.flighId}}</td>
+    <td>{{airlinesEntity.airlineName}}</td>
+    <td>{{airlinesEntity.fromPlace}}</td>
+    <td>{{airlinesEntity.toPlace}}</td>
+    <td>{{airlinesEntity.startDateTime}}</td>
+    <td>{{airlinesEntity.endDateTime}}</td>
+    <td>{{airlinesEntity.scheduledDays}}</td>
+    <td>{{airlinesEntity.instrumentUsed}}</td>
+    <td>{{airlinesEntity.businessClassSeats}}</td>
+    <td>{{airlinesEntity.nonBusinessClassSeats}}</td> 
+    <td>{{airlinesEntity.ticketCost}}</td>
+    <td>{{airlinesEntity.numberOfRows}}</td>
+    <td>{{airlinesEntity.meal}}</td>
+    <td>{{airlinesEntity.blockStatus}}</td>
+  </tr>
+
+</table>
+
+<p>Register New Airline <br><br><button type="button" (click)="onClick()">Click to Register New Airline</button></p>
+
+<div id="wrapper">
+    <div id="container">
+      <div><input id="button" type="button" (click)=logout() value="LOGOUT"></div>
+    </div>
+  </div>

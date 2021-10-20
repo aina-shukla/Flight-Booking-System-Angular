@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+.header img {
+    float: left;
+    width: 80px;
+    height: 80px;
+    background: #555;
+  }
+  
+  .header h3 {
+    position: relative;
+    top: 18px;
+    left: 10px;
+    font-size: 2em;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: white;
+    padding-left: 50px;
+    padding: 20px;
+  }
